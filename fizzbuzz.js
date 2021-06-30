@@ -10,11 +10,13 @@
 
 
 
-function rand(m, n) {           // this is a helper function taken from the book to generate an integer
-    return m + Math.floor((n - m + 1)*Math.random());
-    }
-integer = rand(1, 100)
+//function rand(m, n) {           // this is a helper function taken from the book to generate an integer
+//    return m + Math.floor((n - m + 1)*Math.random());
+  //  }
+//integer = rand(1, 100)
 
+const prompt = require('prompt-sync')({sigint: true});        // to declare the function prompt
+var integer = prompt("Enter a number ");
 //console.log(integer, " test")   - this line is only here for me to check that the program is running
             // - is there any other way to print something?
 
