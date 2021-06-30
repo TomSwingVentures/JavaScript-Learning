@@ -1,0 +1,84 @@
+
+Useful bits of code that are used to represent important numeric values:
+
+const small = Number.EPSILON; // the smallest value that can be
+                            // added to 1 to get a distinct number
+                            // larger than 1, approx. 2.2e-16 const 
+bigInt = Number.MAX_SAFE_INTEGER; // the largest representable integer
+const max = Number.MAX_VALUE; // the largest representable number 
+const minInt = Number.MIN_SAFE_INTEGER; // the smallest representable integer 
+const min = Number.MIN_VALUE; // the smallest representable number 
+const nInf = Number.NEGATIVE_INFINITY; // the same as -Infinity
+const nan = Number.NaN; // the same as NaN 
+const inf = Number.POSITIVE_INFINITY; // the same as Infinity
+
+
+Examples of escaping:
+
+const dialog1 = "He looked up and said \"don't do that!\" to Max."; 
+const dialog2 = 'He looked up and said "don\'t do that!" to Max.';
+const s = "In JavaScript, use \\ as an escape character in strings.";
+    - final case is for escaping a backslash
+
+
+
+Use of the backslash:
+
+Table 3-1. Commonly used special characters
+Code Description
+\n Newline (technically a line feed character: ASCII/Unicode 10)
+\r Carriage return (ASCII/Unicode 13)
+\t Tab (ASCII/Unicode 9)
+\' Single quote (note that you can use this even when not necessary)
+\" Double quote (note that you can use this even when not necessary)
+\` Backtick (or “accent grave”; new in ES6) 
+\$ Dollar sign (new in ES6)
+\\ Backslash - "Use \\\ to represent \\
+
+An example of a making an object by using {}
+const sam1 = { 
+    name: 'Sam',
+    age: 4, 
+    };
+
+
+Here is an array containing objects:
+consta4=[
+    { name: "Ruby", hardness: 9 },
+    { name: "Diamond", hardness: 10 },
+    { name: "Topaz", hardness: 8 },
+];
+
+    - note the first element of an array is always 0 e.g. arr[0] and the last arr[arr.length - 1];
+
+Chpt 4:
+
+
+Useful helper functions:
+
+// returns a random integer in the range [m, n] (inclusive)
+function rand(m, n) {
+return m + Math.floor((n - m + 1)*Math.random());
+}
+
+// randomly returns a string representing one of the six // Crown and Anchor faces
+function randFace() {
+return ["crown", "anchor", "heart", "spade", "club", "diamond"] [rand(0, 5)];
+}
+
+To call part of an array:
+const bets = { crown: 0, anchor: 0, heart: 0, spade: 0, club: 0, diamond: 0 };
+bets.crown = 5;
+// this sets the total amount of bets on crown to 5
+
+
+An example of a do while loop where the while statement comes at the end:
+
+let remaining = totalBet; 
+do{
+    let bet = rand(1, remaining); 
+    let face = randFace(); 
+    bets[face] = bets[face] + bet; 
+    remaining = remaining - bet;
+} while(remaining > 0);
+
